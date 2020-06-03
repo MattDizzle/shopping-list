@@ -4,7 +4,7 @@ function clickHandlers(){
     event.preventDefault();
     const item = $('#shopping-list-entry'). val();
     // alert(`${item} has been added to the list`);
-    if( typeof item === 'string'){
+    if(item.length > 2){
       $('li').first().clone().appendTo('ul');
       $('li').last().html(`<li>
         <span class="shopping-item">${item}</span>
@@ -17,7 +17,7 @@ function clickHandlers(){
           </button>
         </div>
       </li>`);
-    }
+    } 
   });
 
   $('.shopping-item-toggle').click(event => {
