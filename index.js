@@ -1,5 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable strict */
+
+// Handler Functions
 function submitHandler(){
   $('main').on('submit', '#js-shopping-list-form', event => {
     event.preventDefault();
@@ -29,12 +31,12 @@ function checkedHandler(){
     event.preventDefault();
     console.log(`checkedHandler is running`);
     // event.stopPropagation();
-    $("li").toggleClass('.shopping-item__checked');
+    // $(event.currentTarget).closest('span').toggleClass('.shopping-item__checked');
+    $(event.currentTarget).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
   });
 }
 $(checkedHandler);
-  
-
+ 
 // RENDERING FUNCTION
 function renderItem(){
   let userInput = $("main").find("#shopping-list-entry").val();
