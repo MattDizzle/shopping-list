@@ -15,24 +15,24 @@ function submitHandler(){
 $(submitHandler);
 
 function deleteHandler(){
-  $('main').on('click', 'li', function(event) {
+  $('ul').on('click', '.shopping-item-delete', function(event) {
     event.preventDefault();
     console.log(`deleteHandler is running`);
     // event.stopPropagation();
-    this.remove();
+    $(event.currentTarget).closest('li').remove();
   });
 }
 $(deleteHandler);
 
-function deleteHandler(){
-  $('main').on('click', 'li', function(event) {
+function checkedHandler(){
+  $('main').on('click', '.shopping-item-toggle', function(event) {
     event.preventDefault();
-    console.log(`deleteHandler is running`);
+    console.log(`checkedHandler is running`);
     // event.stopPropagation();
-    this.remove();
+    $("li").toggleClass('.shopping-item__checked');
   });
 }
-$(deleteHandler);
+$(checkedHandler);
   
 
 // RENDERING FUNCTION
